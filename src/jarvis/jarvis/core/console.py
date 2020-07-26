@@ -20,15 +20,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import subprocess
-import os
-import psutil
 import logging
+import os
+import subprocess
 
+import psutil
 from jarvis import settings
-from jarvis.utils.mongoDB import db
-from jarvis.utils.console import jarvis_logo, start_text, OutputStyler, headerize
 from jarvis.enumerations import MongoCollections, InputMode
+from jarvis.utils.console import jarvis_logo, start_text, OutputStyler, headerize
+from jarvis.utils.mongoDB import db
 
 
 class ConsoleManager:
@@ -55,12 +55,6 @@ class ConsoleManager:
 
         Output example:
 
-              ██╗ █████╗ ██████╗ ██╗   ██╗██╗███████╗
-              ██║██╔══██╗██╔══██╗██║   ██║██║██╔════╝
-              ██║███████║██████╔╝██║   ██║██║███████╗
-         ██   ██║██╔══██║██╔══██╗╚██╗ ██╔╝██║╚════██║
-         ╚█████╔╝██║  ██║██║  ██║ ╚████╔╝ ██║███████║
-          ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚══════╝
           NOTE: CTRL + C If you want to Quit.
         -------------------------------------- GENERAL INFO ---------------------------------------------
         RESPONSE IN SPEECH: NOT ENABLED
@@ -126,12 +120,12 @@ class ConsoleManager:
             MAX_NUMBER_OF_LOG_LINES = 25
             log_path = settings.ROOT_LOG_CONF['handlers']['file']['filename']
 
-            lines = subprocess.check_output(['tail', '-' + str(MAX_NUMBER_OF_LOG_LINES), log_path]).decode("utf-8")
+            '''lines = subprocess.Popen(['tail', '-' + str(MAX_NUMBER_OF_LOG_LINES), log_path])
             actual_number_of_log_lines = len(lines)
             print(OutputStyler.HEADER + headerize('LOG -{0} (Total Lines: {1})'.format(log_path,
                                                                                        actual_number_of_log_lines)
                                                   ) + OutputStyler.ENDC)
-            print(OutputStyler.BOLD + lines + OutputStyler.ENDC)
+            print(OutputStyler.BOLD + lines + OutputStyler.ENDC)'''
 
             # ----------------------------------------------------------------------------------------------------------
             # Assistant input/output sector

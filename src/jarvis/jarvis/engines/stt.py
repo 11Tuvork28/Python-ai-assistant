@@ -20,10 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import logging
-import speech_recognition as sr
-
 import jarvis
+import speech_recognition as sr
 from jarvis.core.console import ConsoleManager
 
 

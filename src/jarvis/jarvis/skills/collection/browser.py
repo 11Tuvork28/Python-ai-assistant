@@ -20,16 +20,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import wikipedia
-import requests
-import time
 import re
-import urllib.request
 import subprocess
+import time
+import urllib.request
 import webbrowser
 
+import requests
+import wikipedia
 from bs4 import BeautifulSoup as bs
-
 from jarvis.skills.skill import AssistantSkill
 
 

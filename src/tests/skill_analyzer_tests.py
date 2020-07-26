@@ -21,14 +21,14 @@
 # SOFTWARE.
 
 import unittest
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 
 from jarvis import settings
-from jarvis.skills.registry import CONTROL_SKILLS, BASIC_SKILLS, ENABLED_BASIC_SKILLS
 from jarvis.enumerations import MongoCollections
 from jarvis.skills.analyzer import SkillAnalyzer
+from jarvis.skills.registry import CONTROL_SKILLS, BASIC_SKILLS, ENABLED_BASIC_SKILLS
 from jarvis.utils.mongoDB import db
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 class TestSkillMatching(unittest.TestCase):

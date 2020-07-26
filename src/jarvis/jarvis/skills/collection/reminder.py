@@ -20,18 +20,17 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import datetime
 import os
 import re
 import time
-import datetime
-
 from threading import Thread
-from playsound import playsound
-from apscheduler.schedulers.background import BackgroundScheduler
 
-from jarvis.utils.input import validate_digits_input
+from apscheduler.schedulers.background import BackgroundScheduler
 from jarvis.skills.skill import AssistantSkill
 from jarvis.utils.console import OutputStyler
+from jarvis.utils.input import validate_digits_input
+from playsound import playsound
 
 time_intervals = {
     'seconds': {'variations': ['sec', 'second', 'seconds'],

@@ -21,6 +21,7 @@
 # SOFTWARE.
 
 import logging
+
 from pymongo import MongoClient, DESCENDING
 
 

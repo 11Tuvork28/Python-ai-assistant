@@ -21,16 +21,14 @@
 # SOFTWARE.
 
 import jarvis
-
+from jarvis.core.nlp import ResponseCreator
+from jarvis.skills.analyzer import SkillAnalyzer
+from jarvis.skills.collection.activation import ActivationSkills
+from jarvis.skills.collection.wolframalpha import WolframSkills
+from jarvis.skills.registry import skill_objects
+from jarvis.utils.mongoDB import db
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
-from jarvis.skills.analyzer import SkillAnalyzer
-from jarvis.skills.registry import skill_objects
-from jarvis.core.nlp import ResponseCreator
-from jarvis.skills.collection.activation import ActivationSkills
-from jarvis.utils.mongoDB import db
-from jarvis.skills.collection.wolframalpha import WolframSkills
 
 
 class Processor:

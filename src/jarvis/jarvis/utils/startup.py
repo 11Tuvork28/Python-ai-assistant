@@ -20,15 +20,16 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import logging
 import os
 import time
+
 import requests
-import logging
 from playsound import playsound
 
-from jarvis.utils import console
-from jarvis.enumerations import MongoCollections
 from jarvis.core.console import ConsoleManager
+from jarvis.enumerations import MongoCollections
+from jarvis.utils import console
 
 
 def play_activation_sound():

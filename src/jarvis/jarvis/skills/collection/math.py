@@ -20,10 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from word2number import w2n
-
 from jarvis.skills.skill import AssistantSkill
 from jarvis.utils.mapping import math_symbols_mapping
+from word2number import w2n
 
 
 class MathSkills(AssistantSkill):

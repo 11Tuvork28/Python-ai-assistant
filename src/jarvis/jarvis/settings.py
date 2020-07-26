@@ -21,7 +21,8 @@
 # SOFTWARE.
 
 from jarvis.enumerations import InputMode
-
+import os
+BASE_DIR =  os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_LOG_CONF = {
     'version': 1,
     'root': {
@@ -33,7 +34,7 @@ ROOT_LOG_CONF = {
             'class': 'logging.handlers.RotatingFileHandler',
             'level': 'DEBUG',
             'formatter': 'detailed',
-            'filename': '/var/log/jarvis.log',
+            'filename': os.path.join(BASE_DIR, 'jarvis.log'),
             'mode': 'a',
             'maxBytes': 10000000,
             'backupCount': 3,
@@ -69,7 +70,8 @@ Keys Description:
 DEFAULT_GENERAL_SETTINGS = {
     'assistant_name': 'Jarvis',
     'input_mode': InputMode.TEXT.value,
-    'response_in_speech': False,
+    'response_in_text': False,
+    'response_in_speech': True,
 }
 
 

@@ -21,8 +21,8 @@
 # SOFTWARE.
 
 import os
-import psutil
 
+import psutil
 from jarvis.skills.skill import AssistantSkill
 
 

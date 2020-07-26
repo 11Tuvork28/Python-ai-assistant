@@ -20,11 +20,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import threading
 import logging
-import pyttsx3
 import queue
+import threading
 
+import pyttsx3
 from jarvis.core.console import ConsoleManager
 
 

@@ -22,8 +22,8 @@
 
 import subprocess
 
-from jarvis.skills.skill import AssistantSkill
 import jarvis
+from jarvis.skills.skill import AssistantSkill
 
 
 def get_master_volume():

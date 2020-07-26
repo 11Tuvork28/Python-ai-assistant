@@ -21,9 +21,9 @@
 # SOFTWARE.
 
 from jarvis import settings
-from jarvis.utils.startup import internet_connectivity_check
-from jarvis.core.processor import Processor
 from jarvis.core.console import ConsoleManager
+from jarvis.core.processor import Processor
+from jarvis.utils.startup import internet_connectivity_check
 
 
 def main():

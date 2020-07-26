@@ -20,10 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import requests
 import json
 import logging
 
+import requests
 from jarvis.settings import IPSTACK_API
 from jarvis.skills.collection.internet import InternetSkills
 from jarvis.skills.skill import AssistantSkill

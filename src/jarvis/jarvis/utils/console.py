@@ -56,10 +56,7 @@ def headerize(text=DASH):
 
     """
 
-    process = os.popen('stty size', 'r')
-    result = process.read()
-    process.close()
-    terminal_height, terminal_length = result.split()
+    terminal_height, terminal_length = 400, 600
     if text:
         text_length = len(text)
         remaining_places = int(terminal_length) - text_length

@@ -21,8 +21,8 @@
 # SOFTWARE.
 
 from jarvis.skills.skill import AssistantSkill
-from jarvis.utils.mongoDB import db
 from jarvis.utils.console import headerize
+from jarvis.utils.mongoDB import db
 
 basic_skills_format = """
 -----------------------------------------------------------------------

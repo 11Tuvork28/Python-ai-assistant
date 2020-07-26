@@ -21,6 +21,7 @@
 # SOFTWARE.
 
 import logging
+
 from jarvis.core.console import ConsoleManager
 from jarvis.utils.console import user_input
 

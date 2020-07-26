@@ -20,8 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import subprocess
 import logging
+import subprocess
 import time
 
 from jarvis.skills.skill import AssistantSkill
@@ -58,7 +58,7 @@ class LinuxAppSkills(AssistantSkill):
         Opens new browser window.
         """
         try:
-            subprocess.Popen(['firefox'], stderr=subprocess.PIPE, shell=False).communicate()
+            subprocess.Popen(['firefox.exe'], stderr=subprocess.PIPE, shell=False).communicate()
         except Exception as e:
             cls.response("An error occurred, I can't open firefox")
             logging.debug(e)

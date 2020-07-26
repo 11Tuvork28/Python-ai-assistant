@@ -20,10 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import requests
 import logging
-import speedtest
 
+import speedtest
 from jarvis.skills.skill import AssistantSkill
 from jarvis.utils.startup import internet_connectivity_check
 

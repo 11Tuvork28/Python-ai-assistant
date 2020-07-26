@@ -21,13 +21,11 @@
 # SOFTWARE.
 import importlib
 
-
-from jarvis.skills.skill import AssistantSkill
-from jarvis import settings
-from jarvis.utils.mongoDB import db
 from jarvis.enumerations import InputMode, MongoCollections
+from jarvis.skills.skill import AssistantSkill
 from jarvis.utils import console
 from jarvis.utils import input
+from jarvis.utils.mongoDB import db
 
 input_mode = db.get_documents(collection='general_settings')[0]['input_mode']
 response_in_speech = db.get_documents(collection='general_settings')[0]['response_in_speech']
