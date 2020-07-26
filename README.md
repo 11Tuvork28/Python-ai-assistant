@@ -87,7 +87,7 @@ deactivate
 ```
 *  Now you need to install MongoDB but don't close the Powershell window 
 
-Download their installer and run it. During the installation process you will be asked if it should be install as a service just leave the default selection and press next. That's i, you should now be albe to start the assistant by running in the powershell. If you have any issues don't hesitate  to open an issue at my [repo](https://github.com/11Tuvork28/Python-ai-assistant)
+Download their [installer](https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.8-signed.msi) and run it. During the installation process you will be asked if it should be install as a service just leave the default selection and press next. That's i, you should now be albe to start the assistant by running in the powershell. If you have any issues don't hesitate  to open an issue at my [repo](https://github.com/11Tuvork28/Python-ai-assistant)
 
 ```bash
 source jarvis_virtualenv/bin/activate 
