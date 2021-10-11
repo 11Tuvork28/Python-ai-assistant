@@ -1,37 +1,46 @@
 language: python
+cache: pip
+
+os: linux
+dist: focal
+python: 3.8
+
 jobs:
   include:
-    - name: "Python 3.8 on Focal"
-      os: linux
-      dist: focal
-      python: 3.8
+    - stage: test
+      before_install:
+        - sudo bash bin/deploy/install_system_dependencies.sh
+      install:
+        - bash bin/deploy/install_python_dependencies.sh
+      script:
+        - sudo bash bin/tests/run_tests_on_travis.sh
+    - stage: merge (develop --> master)
+      install: skip
+      script:
+        - bash bin/deploy/new_release_auto_tagging.sh
+        - sudo bash bin/deploy/merge_develop_to_master.sh
+    - stage: deploy
+      install: skip
+      script: skip
+      env:
+        - RELEASE_PACKAGE=jarvis_package.tar
+      before_deploy:
+        - sudo bash setup.sh
+        - sudo bash run_tests.sh
+        - bash bin/deploy/create_release_package.sh
+      deploy:
+        provider: releases
+        skip_cleanup: true
+        api_key: $GITHUB_TOKEN
+        file: $RELEASE_PACKAGE
 
-install:
-  - echo "sudo bash setup.sh"
-
-script:
-  - echo "sudo bash run_tests.sh"
+stages:
+  - name: test
+    if: NOT(branch==master)
+  - name: merge (develop --> master)
+    if: branch==develop AND (NOT(type==pull_request))
+  - name: deploy
+    if: branch==master AND (NOT(type==pull_request))
 
 notifications:
   email: false
-
-after_success:
-  - sudo bash ./Scripts/merge_develop_to_master.sh
-
-before_deploy:
-  - echo "Build Jarvis package"
-  - tar -cvf jarvis_package.tar -T config/package_file_list.txt
-  - echo "Add tags to new release"
-  - git config --global user.email "builds@travis-ci.com"
-  - git config --global user.name "Travis CI"
-  - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
-  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -q https://$GITHUB_TOKEN@github.com/ggeop/Python-ai-assistant --tags
-
-deploy:
-  provider: releases
-  skip_cleanup: true
-  api_key: $GITHUB_TOKEN
-  file: jarvis_package.tar
-  on:
-    branch: master

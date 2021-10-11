@@ -3,7 +3,7 @@
 # Activate Python virtual env
 # --------------------------------
 export PYTHONPATH="${PYTHONPATH}:./src/jarvis"
-source jarvis_virtualenv/bin/activate
+source ~/virtualenv/python3.8/bin/activate
 
 # --------------------------------
 # Start MongoDB service

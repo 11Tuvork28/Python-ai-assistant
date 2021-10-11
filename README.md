@@ -1,8 +1,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/ggeop/python-ai-assistant/badge)](https://www.codefactor.io/repository/github/ggeop/Python-ai-assistant)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8c90305e22186cc2c9d5/maintainability)](https://codeclimate.com/github/ggeop/Python-ai-assistant/maintainability)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://app.travis-ci.com/ggeop/Python-ai-assistant.svg?branch=master)](https://travis-ci.org/ggeop/Python-ai-assistant)
-
+[![Build Status](https://app.travis-ci.com/ggeop/Python-ai-assistant.svg?branch=master)](https://app.travis-ci.com/ggeop/Python-ai-assistant)
 
 ![alt text](https://github.com/ggeop/Python-ai-assistant/blob/master/imgs/jarvis_logo.png)
 
@@ -60,11 +59,16 @@ All the following APIs have free no-commercial API calls. Subscribe to the follo
 *   [WolframAlpha](https://developer.wolframalpha.com/portal/myapps/): API for answer questions.
 *   [IPSTACK](https://ipstack.com/signup/free): API for current location.
 ### Setup Jarvis in Ubuntu/Debian system
-*   Download the Jarvis repo locally:
-
+* Download the Jarvis repo locally:
 ```bash
-git clone https://github.com/ggeop/Jarvis.git
+git clone https://github.com/ggeop/Jarvis.git --branch master
 ```
+
+**For Contribution**:
+```bash
+git clone https://github.com/ggeop/Jarvis.git --branch develop
+```
+
 *   Change working directory
 ```bash
 cd Jarvis
@@ -146,6 +150,14 @@ The user input analyzed in this space and by using a similarity metric (e.g cosi
 ---
 
 ## Contributing
-* PRs are welcome :relaxed:
-* Try to follow PEP 8 guidelines and add comments!
+* Pull Requests (PRs) are welcome :relaxed:
+* The process for contribution is the following:
+    * Clone the project
+    * Checkout `develop` branch and create a feature branch e.g `feature_branch`
+    * Open a PR to `develop`
+    * Wait for review and approval !!
+    * `master` branch update and release is automated via [Travis CI/CD](https://app.travis-ci.com/github/ggeop/Python-ai-assistant)
+* Try to follow PEP-8 guidelines and add useful comments!
 
+## CI/CD Flow
+![alt text](https://github.com/ggeop/Python-ai-assistant/blob/master/imgs/TravisFlow.png)
